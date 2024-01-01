@@ -6,7 +6,15 @@
 
 export function getClientWithGreatestBalance(array) {
   // Your code goes here...
+  if (!Array.isArray(array) || array.length === 0) {
+    return [];
+  }
+  
+  const greatestBalanceClient = array.reduce((prev, current) => {
+    return prev.balance > current.balance ? prev : current;
+  });
 
+  return [greatestBalanceClient];
 }
 
 
