@@ -11,6 +11,9 @@
 export function getAverage(array) {
   // Your code goes here...
 
+  const sum = array.reduce((acc, num) => acc + num, 0);
+  const average = sum / array.length;
+  return average;
 }
 
 
@@ -23,9 +26,10 @@ export function getAverage(array) {
 
 export function getStringSum(str) {
   // Your code goes here...
-
+  const sum = (str.match(/\d/g) || []).reduce((acc, num) => acc + parseInt(num, 10), 0);
+  return sum;
 }
-
+const result = getStringSum("GH2U87A");
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-3"

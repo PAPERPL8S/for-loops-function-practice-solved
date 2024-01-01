@@ -4,10 +4,25 @@
 // Array example: bankAccounts in /data/data.js
 // getAllClientNames(bankAccounts) => ['Kevin', 'Spenser']
 
-export function getAllClientNames(array) {
+export function getAllClientNames(peopleArray) {
   // Your code goes here...
+   if (!Array.isArray(peopleArray)) {
+        return [];
+    }
 
+    const namesArray = peopleArray.map(person => person.name);
+    return namesArray;
 }
+
+const people = [
+    { name: 'Andre' },
+    { name: 'Rosa' },
+    { name: 'John' },
+    { name: 'Lexi' },
+    { name: 'Stacy' }
+];
+
+const names = getAllClientNames(people);
 
 
 
