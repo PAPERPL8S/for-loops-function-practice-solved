@@ -5,7 +5,15 @@
 
 export function getClientsWithLetterInName(array, letter) {
   // Your code goes here...
+if (!Array.isArray(array) || array.length === 0 || typeof letter !== 'string') {
+    return [];
+  }
 
+  const clientsWithLetterInName = array
+    .filter(person => typeof person.name === 'string' && person.name.toLowerCase().includes(letter.toLowerCase()))
+    .map(person => person.name);
+  
+  return clientsWithLetterInName;
 }
 
 // === TEST YOURSELF ===
