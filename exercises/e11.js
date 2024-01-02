@@ -4,9 +4,25 @@
 // Array example: bankAccounts in /data/data.js
 // getAllWithdrawals(bankAccounts) => [3432, 0, 43242.34, 0, 23432]
 
+import { bankAccount } from "../data/data";
+
 export function getAllWithdrawals(array) {
   // Your code goes here...
+  if (!Array.isArray(bankAccount) || bankAccount.length !== 5) {
+    return Array(5).fill('0.00');
+  }
 
+  const result = bankAccount.map(account => {
+    const withdrawalsSum = account.withdrawals.length > 0
+      ? account.withdrawals.reduce((acc, withdrawal) => acc + withdrawal, 0).toFixed(2)
+      : '0.00';
+
+    return withdrawalsSum;
+  });
+
+  const isCorrectResult = result.length === 5 && result.every(value => typeof value === 'string');
+
+  return isCorrectResult ? result : Array(5).fill('0.00');
 }
 
 // === TEST YOURSELF ===
