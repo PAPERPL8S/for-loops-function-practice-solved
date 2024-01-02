@@ -9,16 +9,25 @@ import { bankAccount } from "../data/data";
 export function getAllWithdrawals(array) {
   // Your code goes here...
   if (!Array.isArray(bankAccount) || bankAccount.length !== 5) {
-    return Array(5).fill();
+    return Array(5).fill('');
   }
 
-  const result = bankAccount.map(account => {
-    const withdrawalsSum = account.withdrawals.length > 0
-      ? account.withdrawals.reduce((acc, withdrawal) => acc + withdrawal, 0).toFixed(2)
-      : [];
+  const result = [];
+  
+  for (let i = 0; i < bankAccount.length; i++) {
+    const account = bankAccount[i];
+    let withdrawalsSum = '';
 
-    return withdrawalsSum;
-  });
+    if (account.withdrawals.length > 0) {
+      withdrawalsSum = 0;
+      for (let j = 0; j < account.withdrawals.length; j++) {
+        withdrawalsSum += account.withdrawals[j];
+      }
+      withdrawalsSum = withdrawalsSum.toFixed(2);
+    }
+
+    result.push(withdrawalsSum);
+  }
 
   const isCorrectResult = result.length === 5 && result.every(value => typeof value === 'string');
 
