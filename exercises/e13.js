@@ -32,7 +32,7 @@ export function getAllAccountsWithSumsOfDepositsLess2000(accounts) {
   return result.slice(0, 4);
 }
 
-const bankAccounts = [
+const accounts = [
 ];
 
 module.exports = getAllAccountsWithSumsOfDepositsLess2000;
