@@ -5,10 +5,37 @@
 // flatArrays([['d', 'r'], 'z', 'b', ['f', 'y']]) => ['d', 'r', 'z', 'b', 'f', 'y']
 // NOTE: You can NOT use the array.flat() method in your code
 
-export function flatArrays(array) {
+export function flatArrays(arrays) {
   // Your code goes here...
+let flatArrays = [];
 
+  for (let i = 0; i < arrays.length; i++) {
+    const currentArray = arrays[i];
+
+    for (let j = 0; j < currentArray.length; j++) {
+      const currentElement = currentArray[j];
+
+      if (Array.isArray(currentElement)) {
+      
+        for (let k = 0; k < currentElement.length; k++) {
+          flatArrays.push(currentElement[k]);
+        }
+      } else {
+  
+        flatArrays.push(currentElement);
+      }
+    }
+  }
+
+  return flatArrays;
 }
+
+const arrA = [1, [2, 3], [4, [5, 6]]];
+const arrB = [7, 8, [9, 10]];
+
+const result = flatArrays(arrA, arrB);
+console.log(result);
+
 
 
 
