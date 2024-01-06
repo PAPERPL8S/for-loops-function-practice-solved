@@ -10,7 +10,10 @@ export function getAllClientNames(peopleArray) {
         return [];
     }
 
-    const namesArray = peopleArray.map(person => person.name);
+    const namesArray = [];
+    for (let i = 0; i < peopleArray.length; i++) {
+        namesArray.push(peopleArray[i].name);
+    }
     return namesArray;
 }
 
