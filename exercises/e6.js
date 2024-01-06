@@ -5,14 +5,19 @@
 
 export function getClientWithNoMoney(peopleArray) {
   // Your code goes here...
- if (!Array.isArray(peopleArray)) {
+  if (!Array.isArray(peopleArray)) {
     return [];
   }
 
-  const noMoneyClients = peopleArray.filter(person => person.balance === 0);
-  const namesArray = noMoneyClients.map(person => person.name);
+  const clientsWithNoMoney = [];
+  for (let i = 0; i < peopleArray.length; i++) {
+    if (peopleArray[i].balance === 0) {
+      clientsWithNoMoney.push(peopleArray[i].name);
+    }
+  }
 
-  return namesArray;
+  return clientsWithNoMoney;
+
 }
 
 const bankAccounts = [
@@ -22,8 +27,8 @@ const bankAccounts = [
   { name: 'Candy', balance: 0 }
 ];
 
-const namesWithNoMoney = getClientWithNoMoney(bankAccounts);
-console.log(bankAccounts);
+const clientsWithNoMoney = getClientWithNoMoney(bankAccounts);
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-6"
