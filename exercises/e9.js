@@ -10,7 +10,13 @@ export function getClientsWithBalanceOverOneHundred(array) {
     return [];
   }
   
-  const balanceOverOneHundred = array.filter(person => person.balance > 100);
+  const balanceOverOneHundred = [];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].balance > 100) {
+      balanceOverOneHundred.push(array[i]);
+    }
+  }
 
   return balanceOverOneHundred;
 }
