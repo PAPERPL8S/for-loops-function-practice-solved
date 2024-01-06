@@ -11,8 +11,10 @@ export function getClientWithLeastPositiveBalance(peopleArray) {
   }
 
   const positiveBalanceClients = [];
+  
   for (let i = 0; i < peopleArray.length; i++) {
     const person = peopleArray[i];
+
     if (person.balance > 0) {
       positiveBalanceClients.push(person);
     }
@@ -23,8 +25,10 @@ export function getClientWithLeastPositiveBalance(peopleArray) {
   }
 
   let getClientWithLeastPositiveBalance = positiveBalanceClients[0];
+
   for (let i = 1; i < positiveBalanceClients.length; i++) {
     const current = positiveBalanceClients[i];
+
     if (current.balance < getClientWithLeastPositiveBalance.balance) {
       getClientWithLeastPositiveBalance = current;
     }
