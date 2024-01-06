@@ -29,7 +29,6 @@ export function getClientWithLeastPositiveBalance(peopleArray) {
       getClientWithLeastPositiveBalance = current;
     }
   }
-
   return [getClientWithLeastPositiveBalance];
 }
 
