@@ -34,7 +34,7 @@ export function findMaxValueInArray(array) {
             maxValue = array[i];
         }
     }
-
+    
     return maxValue;
 }
 
