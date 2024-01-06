@@ -26,10 +26,24 @@ export function getAverage(array) {
 
 export function getStringSum(str) {
   // Your code goes here...
-  const sum = (str.match(/\d/g) || []).reduce((acc, num) => acc + parseInt(num, 10), 0);
+  let sum = 0;
+  const numbers = [];
+
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    if(!isNaN(parseInt(char, 10))) {
+      numbers.push(parseInt(char, 10));
+    }
+  }
+
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+
   return sum;
 }
-const result = getStringSum("GH2U87A");
+
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-3"
