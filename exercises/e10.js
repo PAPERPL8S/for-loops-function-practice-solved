@@ -9,9 +9,15 @@ if (!Array.isArray(array) || array.length === 0 || typeof letter !== 'string') {
     return [];
   }
 
-  const clientsWithLetterInName = array
-    .filter(person => typeof person.name === 'string' && person.name.toLowerCase().includes(letter.toLowerCase()))
-    .map(person => person.name);
+  const clientsWithLetterInName = [];
+   
+  for (let i = 0; i < array.length; i++) {
+    const person = array[i];
+
+    if (typeof person.name === 'string' && person.name.toLowerCase().includes(letter.toLowerCase())) {
+      clientsWithLetterInName.push(person.name);
+    }
+  }
   
   return clientsWithLetterInName;
 }
