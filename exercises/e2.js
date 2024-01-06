@@ -18,7 +18,7 @@ export function getNumbersWithSquareRoots(max) {
 } 
 
 const result = getNumbersWithSquareRoots(17);
-console.log(result);
+
 
 
 // === TEST YOURSELF ===
