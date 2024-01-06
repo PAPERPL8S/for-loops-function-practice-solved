@@ -10,11 +10,18 @@ export function getClientWithGreatestBalance(array) {
     return [];
   }
   
-  const greatestBalanceClient = array.reduce((prev, current) => {
-    return prev.balance > current.balance ? prev : current;
-  });
+  let greatestBalanceClient = array[0];
 
-  return [greatestBalanceClient];
+  for (let i = 1; i < array.length; i++) {
+    if (array[i].balance > greatestBalanceClient.balance) {
+      greatestBalanceClient = array[i];
+    }
+  }
+    
+  const resultArray = [];
+  resultArray.push(greatestBalanceClient);
+
+    return resultArray;
 }
 
 
