@@ -7,8 +7,17 @@ export function getFirstTenNumbers() {
   // Your code goes here...
   const array1 = [1, 2, 3, 4, 5];
   const array2 = [6, 7, 8, 9, 10];
-  const array3 = array1.concat(array2);
-  return array3.slice(0, 10);
+  const array3 = [];
+
+  for (const element of array1) {
+    array3.push(element);
+  }
+  for (const element of array2) {
+    array3.push(element);
+  }
+
+  const result = array3.slice(0, 10);
+  return result;
 }
 
 
