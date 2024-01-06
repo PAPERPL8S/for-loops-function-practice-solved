@@ -25,7 +25,8 @@ const people = [
     { name: 'Stacy' }
 ];
 
-const names = getAllClientNames(people);
+
+
 
 
 
