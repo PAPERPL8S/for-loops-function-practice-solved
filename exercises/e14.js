@@ -7,19 +7,20 @@
 
 export function getClientsWithWrongBalance(accounts) {
   // Your code goes here...
+ const result = [];
 
-const result = [];
-
-  for (const account of accounts) {
+  for (let i = 0; i < accounts.length; i++) {
+    const account = accounts[i];
+    
     let sumOfDeposits = 0;
-    for (const deposit of account.deposits) {
-      sumOfDeposits += deposit;
+    for (let j = 0; j < account.deposits.length; j++) {
+      sumOfDeposits += account.deposits[j];
     }
 
     let sumOfWithdrawals = 0;
     if (account.withdrawals) {
-      for (const withdrawal of account.withdrawals) {
-        sumOfWithdrawals += withdrawal;
+      for (let k = 0; k < account.withdrawals.length; k++) {
+        sumOfWithdrawals += account.withdrawals[k];
       }
     }
 
@@ -36,12 +37,6 @@ const result = [];
 
   return result;
 }
-
-const bankAccounts = [
-];
-
-console.log(getClientsWithWrongBalance(bankAccounts));
-
 
 
 // === TEST YOURSELF ===
