@@ -10,15 +10,16 @@
 // ]
 
 export function getAllAccountsWithSumsOfDepositsLess2000(accounts) {
-
   const result = [];
 
-  for (const account of accounts) {
+  for (let i = 0; i < accounts.length && result.length < 4; i++) {
+    const account = accounts[i];
+
     if (Array.isArray(account.deposits)) {
       let sumOfDeposits = 0;
 
-      for (const deposit of account.deposits) {
-        sumOfDeposits += deposit;
+      for (let j = 0; j < account.deposits.length; j++) {
+        sumOfDeposits += account.deposits[j];
       }
 
       if (sumOfDeposits < 2000 || sumOfDeposits === 0) {
@@ -29,11 +30,12 @@ export function getAllAccountsWithSumsOfDepositsLess2000(accounts) {
     }
   }
 
-  return result.slice(0, 4);
-}
+  while (result.length < 4) {
+    result.push({});
+  }
 
-const accounts = [
-];
+ return result;
+}
 
 module.exports = getAllAccountsWithSumsOfDepositsLess2000;
 
