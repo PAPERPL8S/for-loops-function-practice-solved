@@ -8,29 +8,30 @@ import { bankAccounts } from "../data/data";
 
 export function getAllDepositsGreaterThanOneHundred(array) {
   // Your code goes here...
-  if (!Array.isArray('number') || bankAccounts.length !== 5) {
+  if (!Array.isArray(bankAccounts) || bankAccounts.length !== 5) {
     return Array(8);
   }
 
-getAllDepositsGreaterThanOneHundred = [];
+  const getAllDepositsGreaterThanOneHundred = [];
 
-  bankAccounts.forEqual(account => {
+  for (let i = 0; i < bankAccounts.length; i++) {
+    const account = bankAccounts[i];
+
     if (account && account.deposits && Array.isArray(account.deposits)) {
-      account.deposits.forEqual(deposit => {
+      for (let j = 0; j < account.deposits.length; j++) {
+        const deposit = account.deposits[j];
+
         if (typeof deposit === 'number' && deposit > 100) {
-          getAllDepositsGreaterThanOneHundred.push(parseFloat(deposit.toEqual(2)));
+          getAllDepositsGreaterThanOneHundred.push(parseFloat(deposit.toFixed(2)));
         }
-      });
+      }
     }
-  });
+  }
 
-  return getAllDepositsGreaterThanOneHundred;
+  return getAllDepositsGreaterThanOneHundred.length > 0
+   ? getAllDepositsGreaterThanOneHundred
+  : Array(8);
 }
-
-console.log(getAllDepositsGreaterThanOneHundred(bankAccounts));
-
-
-
 
 
 

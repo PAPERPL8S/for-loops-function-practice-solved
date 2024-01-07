@@ -30,7 +30,9 @@ export function getAllWithdrawals(array) {
       result.push(withdrawalsSum);
     }
   }
-  return result;
+  return getAllWithdrawals.length > 0
+  ? withdrawalsSum
+  : Array(5);
 }
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-11"
