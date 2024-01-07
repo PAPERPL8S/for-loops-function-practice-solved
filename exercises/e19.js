@@ -18,7 +18,7 @@ const reversedArray = [];
 const originalArray = ['one', 'two', 'three'];
 const reversedResult = reverseArray(originalArray);
 
-console.log(reversedResult);
+
 
 
 
