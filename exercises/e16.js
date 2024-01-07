@@ -16,12 +16,10 @@ let flatArrays = [];
       const currentElement = currentArray[j];
 
       if (Array.isArray(currentElement)) {
-      
         for (let k = 0; k < currentElement.length; k++) {
           flatArrays.push(currentElement[k]);
         }
       } else {
-  
         flatArrays.push(currentElement);
       }
     }
@@ -33,8 +31,6 @@ let flatArrays = [];
 const arrA = [1, [2, 3], [4, [5, 6]]];
 const arrB = [7, 8, [9, 10]];
 
-const result = flatArrays(arrA, arrB);
-console.log(result);
 
 
 
