@@ -22,8 +22,7 @@ let result = [];
 const arrA = [1, 2, 3];
 const arrB = [4, 5, 6];
 
-const concatArray = concatArrays(arrA, arrB);
-console.log(concatArray);
+
 
 
 
