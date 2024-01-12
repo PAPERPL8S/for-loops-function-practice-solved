@@ -7,9 +7,9 @@
 
 export function getClientsWithWrongBalance(accounts) {
   // Your code goes here...
- const result = [];
+  const result = [];
 
-  for (let i = 0; i < accounts.length; i++) {
+  for (let i = 0; i < accounts.length && result.length < 1; i++) {
     const account = accounts[i];
     
     let sumOfDeposits = 0;
@@ -29,15 +29,11 @@ export function getClientsWithWrongBalance(accounts) {
     if (account.balance !== expectedBalance) {
       result.push(account);
     }
-
-    if (result.length === 1) {
-      break;
-    }
   }
 
   return result;
 }
-
+  
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-14"
