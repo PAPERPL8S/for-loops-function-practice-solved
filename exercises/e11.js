@@ -8,32 +8,21 @@ import { bankAccounts } from "../data/data";
 
 export function getAllWithdrawals(array) {
   // Your code goes here...
-  const result = [];
 
-  if (!Array.isArray(bankAccounts) || bankAccounts.length !== 5) {
-    for (let i = 0; i < 5; i++) {
-      result.push('');
-    }
-  } else {
-    for (let i = 0; i < bankAccounts.length; i++) {
-      const account = bankAccounts[i];
-      let withdrawalsSum = '';
+  let usersWithdrawals = [];
 
-      if (account.withdrawals.length > 0) {
-        withdrawalsSum = 0;
-        for (let j = 0; j < account.withdrawals.length; j++) {
-          withdrawalsSum += account.withdrawals[j];
-        }
-        withdrawalsSum = withdrawalsSum(2);
+  for (let user of array) {
+    let userWithdrawals = 0;
+    if (user.withdrawals) {
+      for (let amount of user.withdrawals) {
+        userWithdrawals += +amount;
       }
-
-      result.push(withdrawalsSum);
     }
+    usersWithdrawals.push(userWithdrawals);
   }
-  return getAllWithdrawals.length > 0
-  ? withdrawalsSum
-  : Array(5);
+  return usersWithdrawals;
 }
+
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-11"
 // If the test has all tests passed, switch to the next exercise file
