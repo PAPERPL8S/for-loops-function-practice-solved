@@ -30,7 +30,7 @@ export function getStringSum(str) {
   let numTotal = 0;
   for (let elem of str) {
     if (parseInt(elem)) {
-      numTotal += +elem;
+      numTotal += + elem;
     }
   }
   return numTotal;

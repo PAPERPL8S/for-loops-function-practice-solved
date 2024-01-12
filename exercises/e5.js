@@ -6,10 +6,6 @@
 
 export function getAllClientNames(peopleArray) {
   // Your code goes here...
-   if (!Array.isArray(peopleArray)) {
-        return [];
-    }
-
     const namesArray = [];
     for (let i = 0; i < peopleArray.length; i++) {
         namesArray.push(peopleArray[i].name);
@@ -17,13 +13,7 @@ export function getAllClientNames(peopleArray) {
     return namesArray;
 }
 
-const people = [
-    { name: 'Andre' },
-    { name: 'Rosa' },
-    { name: 'John' },
-    { name: 'Lexi' },
-    { name: 'Stacy' }
-];
+
 
 
 
