@@ -10,8 +10,9 @@
 
 export function getAverage(array) {
   // Your code goes here...
+  let sum = 0;
+  array.forEach(num => sum += num); 
 
-  const sum = array.reduce((acc, num) => acc + num, 0);
   const average = sum / array.length;
   return average;
 }
@@ -26,23 +27,14 @@ export function getAverage(array) {
 
 export function getStringSum(str) {
   // Your code goes here...
-  let sum = 0;
-  const numbers = [];
-
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-    if(!isNaN(parseInt(char, 10))) {
-      numbers.push(parseInt(char, 10));
+  let numTotal = 0;
+  for (let elem of str) {
+    if (parseInt(elem)) {
+      numTotal += +elem;
     }
   }
-
-  for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
-  }
-
-  return sum;
+  return numTotal;
 }
-
 
 
 // === TEST YOURSELF ===
