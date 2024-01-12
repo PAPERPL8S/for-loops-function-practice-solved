@@ -6,9 +6,6 @@
 
 export function getClientsWithBalanceOverOneHundred(array) {
   // Your code goes here...
-  if (!Array.isArray(array) || array.length === 0) {
-    return [];
-  }
   
   const balanceOverOneHundred = [];
 
@@ -17,7 +14,6 @@ export function getClientsWithBalanceOverOneHundred(array) {
       balanceOverOneHundred.push(array[i]);
     }
   }
-
   return balanceOverOneHundred;
 }
 
