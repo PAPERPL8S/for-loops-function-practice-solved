@@ -8,11 +8,11 @@ import { bankAccounts } from "../data/data";
 
 export function getAllDepositsGreaterThanOneHundred(array) {
   // Your code goes here...
-  if (!Array.isArray(bankAccounts) || bankAccounts.length !== 5) {
+ if (!Array.isArray(bankAccounts) || bankAccounts.length !== 5) {
     return Array(8);
   }
 
-  const getAllDepositsGreaterThanOneHundred = [];
+  const result = [];
 
   for (let i = 0; i < bankAccounts.length; i++) {
     const account = bankAccounts[i];
@@ -22,17 +22,14 @@ export function getAllDepositsGreaterThanOneHundred(array) {
         const deposit = account.deposits[j];
 
         if (typeof deposit === 'number' && deposit > 100) {
-          getAllDepositsGreaterThanOneHundred.push(parseFloat(deposit.toFixed(2)));
+          result.push(parseFloat(deposit.toFixed(2)));
         }
       }
     }
   }
 
-  return getAllDepositsGreaterThanOneHundred.length > 0
-   ? getAllDepositsGreaterThanOneHundred
-  : Array(8);
+  return result.length > 0 ? result : Array(8);
 }
-
 
 
 // === TEST YOURSELF ===
