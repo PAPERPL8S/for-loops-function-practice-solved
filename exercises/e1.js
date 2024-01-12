@@ -5,20 +5,14 @@
 
 export function getFirstTenNumbers() {
   // Your code goes here...
-  const array1 = [1, 2, 3, 4, 5];
-  const array2 = [6, 7, 8, 9, 10];
-  const array3 = [];
-
-  for (const element of array1) {
-    array3.push(element);
+  
+  let newArr = [];
+  for (let i = 1; i <= 10; i++) {
+    newArr.push(i)
   }
-  for (const element of array2) {
-    array3.push(element);
-  }
-
-  const result = array3.slice(0, 10);
-  return result;
+  return newArr;
 }
+
 
 
 // === TEST YOURSELF ===
