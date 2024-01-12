@@ -6,17 +6,14 @@
 
 export function reverseArray(array) {
   // Your code goes here...
-const reversedArray = [];
+let reversedArray = [];
 
   for (let i = array.length - 1; i >= 0; i--) {
     reversedArray.push(array[i]);
   }
-
   return reversedArray;
 }
 
-const originalArray = ['one', 'two', 'three'];
-const reversedResult = reverseArray(originalArray);
 
 
 
