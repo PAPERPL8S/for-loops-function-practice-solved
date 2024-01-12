@@ -5,8 +5,8 @@
 // NOTE: You can NOT use the array.join(), array.toString(), and array.replace() methods in your code
 
 export function joinToString(array, separator) {
-    let result = '';
 
+  let result = '';
   for (let i = 0; i < array.length; i++) {
     result += array[i];
 
@@ -14,15 +14,8 @@ export function joinToString(array, separator) {
       result += separator;
     }
   }
-
   return result;
 }
-
-const elements = ['Fire', 'Air', 'Water'];
-const separator = ', ';
-
-const joinedString = joinToString(elements, separator);
-console.log(joinedString);
 
 
 // === TEST YOURSELF ===
