@@ -28,8 +28,7 @@ let flatArrays = [];
   return flatArrays;
 }
 
-const arrA = [1, [2, 3], [4, [5, 6]]];
-const arrB = [7, 8, [9, 10]];
+
 
 
 
