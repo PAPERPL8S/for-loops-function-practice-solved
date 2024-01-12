@@ -15,8 +15,6 @@ export function doesArrayInclude(array, value) {
     return false;
   }
 
-// const array = [1, 2, 3 ];
-// const value = (3);
 
 
 // === TEST YOURSELF ===
