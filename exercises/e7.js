@@ -6,36 +6,24 @@
 
 export function getClientWithLeastPositiveBalance(peopleArray) {
   // Your code goes here...
-  if (!Array.isArray(peopleArray) || peopleArray.length === 0) {
-    return [];
-  }
-
-  const positiveBalanceClients = [];
   
+  const positiveBalanceClients = [];
+  let getClientWithLeastPositiveBalance;
+
   for (let i = 0; i < peopleArray.length; i++) {
     const person = peopleArray[i];
 
     if (person.balance > 0) {
       positiveBalanceClients.push(person);
+    
+      if (!getClientWithLeastPositiveBalance || person.balance < getClientWithLeastPositiveBalance.balance) {
+        getClientWithLeastPositiveBalance = person;
+      }
     }
   }
 
-  if (positiveBalanceClients.length === 0) {
-    return [];
-  }
-
-  let getClientWithLeastPositiveBalance = positiveBalanceClients[0];
-
-  for (let i = 1; i < positiveBalanceClients.length; i++) {
-    const current = positiveBalanceClients[i];
-
-    if (current.balance < getClientWithLeastPositiveBalance.balance) {
-      getClientWithLeastPositiveBalance = current;
-    }
-  }
-  return [getClientWithLeastPositiveBalance];
+  return positiveBalanceClients.length > 0 ? [getClientWithLeastPositiveBalance] : [];
 }
-
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-7"
 // If the test has all tests passed, switch to the next exercise file
