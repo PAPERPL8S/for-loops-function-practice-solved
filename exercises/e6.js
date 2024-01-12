@@ -5,29 +5,15 @@
 
 export function getClientWithNoMoney(peopleArray) {
   // Your code goes here...
-  if (!Array.isArray(peopleArray)) {
-    return [];
-  }
-
   const clientsWithNoMoney = [];
   for (let i = 0; i < peopleArray.length; i++) {
     if (peopleArray[i].balance === 0) {
       clientsWithNoMoney.push(peopleArray[i].name);
     }
   }
-
   return clientsWithNoMoney;
+};
 
-}
-
-const bankAccounts = [
-  { name: 'Susan', balance: 1000000000000 },
-  { name: 'Morgan', balance: 10000000 },
-  { name: 'Joshua', balance: 400000000 },
-  { name: 'Candy', balance: 0 }
-];
-
-const clientsWithNoMoney = getClientWithNoMoney(bankAccounts);
 
 
 // === TEST YOURSELF ===
