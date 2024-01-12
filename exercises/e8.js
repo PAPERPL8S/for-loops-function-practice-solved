@@ -6,9 +6,6 @@
 
 export function getClientWithGreatestBalance(array) {
   // Your code goes here...
-  if (!Array.isArray(array) || array.length === 0) {
-    return [];
-  }
   
   let greatestBalanceClient = array[0];
 
@@ -18,10 +15,9 @@ export function getClientWithGreatestBalance(array) {
     }
   }
     
-  const resultArray = [];
-  resultArray.push(greatestBalanceClient);
+  const resultArray = [greatestBalanceClient];
 
-    return resultArray;
+  return resultArray;
 }
 
 
