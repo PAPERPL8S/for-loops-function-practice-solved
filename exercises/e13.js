@@ -34,10 +34,8 @@ export function getAllAccountsWithSumsOfDepositsLess2000(accounts) {
     result.push({});
   }
 
- return result;
+  return result;
 }
-
-module.exports = getAllAccountsWithSumsOfDepositsLess2000;
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-13"
