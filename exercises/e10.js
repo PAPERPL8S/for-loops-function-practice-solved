@@ -5,20 +5,15 @@
 
 export function getClientsWithLetterInName(array, letter) {
   // Your code goes here...
-if (!Array.isArray(array) || array.length === 0 || typeof letter !== 'string') {
-    return [];
-  }
 
   const clientsWithLetterInName = [];
    
   for (let i = 0; i < array.length; i++) {
     const person = array[i];
-
     if (typeof person.name === 'string' && person.name.toLowerCase().includes(letter.toLowerCase())) {
       clientsWithLetterInName.push(person.name);
     }
   }
-  
   return clientsWithLetterInName;
 }
 
